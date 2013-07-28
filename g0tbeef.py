@@ -191,13 +191,11 @@ class Own():
                         return
 		# find data to mod
 		if ("GET" in data):
-			#print "[*] caught traffic from %s:%i to %s:%i" % (packet.src,packet.sport,packet.dst,packet.dport)
-			print "[*] caught traffic from %s:%i to %s:%i" % ("<redacted>",packet.sport,packet.dst,packet.dport)
+			print "[*] caught traffic from %s:%i to %s:%i" % (packet.src,packet.sport,packet.dst,packet.dport)
 			payload.set_verdict(nfqueue.NF_ACCEPT)
 			return
 		if ("text/html" in data):
-			#print "[*] caught traffic from %s:%i to %s:%i" % (packet.src,packet.sport,packet.dst,packet.dport)
-			print "[*] caught traffic from %s:%i to %s:%i" % ("<redacted>",packet.sport,packet.dst,packet.dport)
+			print "[*] caught traffic from %s:%i to %s:%i" % (packet.src,packet.sport,packet.dst,packet.dport)
 			# save response ack
                        	m.store_ack(packet['TCP'].ack)
 		# see if were on the same ack as before
